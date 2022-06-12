@@ -11,26 +11,30 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
+import os
+import django_heroku
+import dj_database_url
+from decouple import config, Csv
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-%4z&#dmmrbf(t@me42*+ccj8l+_0aj1j*n0n-2wejmo64p@22k'
-
+SECRET_KEY=config("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = []
-
+DEBUG=config("DEBUG")
+MODE=config("MODE", default="dev")
+ALLOWED_HOSTS='nazawwards.herokuapp.com'
 
 # Application definition
-
 INSTALLED_APPS = [
+    'awwardsapp',
+    'crispy-forms',
+    'bootstrap4',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -68,7 +72,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'awwards.wsgi.application'
-
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
