@@ -37,10 +37,7 @@ def welcome(request):
    projects=Project.objects.all()
    project_average=Rate.objects.order_by('-score').first()
    ratings=Rate.objects.all()
-   
- 
-
-          
+             
    params={
        'users':users,
        'profiles':profiles,

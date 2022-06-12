@@ -55,7 +55,7 @@ Nazarena Wambura.</br>
 |----------------------------------------------|:-----------------------------------:|-----------------------------:|       
 | Click on button vote on the project  | Enter rate for design content and usability | The rates are updated and displayed  |
 
-<br/>
+
 ## Setup/Installation Requirements
 1. Create a folder and cd to it.
 2. Clone the repository below with the command `git clone <https option url> .`  <br>
