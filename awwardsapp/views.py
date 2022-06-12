@@ -54,8 +54,63 @@ def upload_project(request):
         else:
             form=UploadProjectForm()
         return render(request, 'awwards/project.html',{"form":form}) 
+
+@login_required
+def rate_project(request, project_title):
+    project=Project.objects.get(title=project_title) 
+    rates=Rate.objects.filter(user=request.user,project=project).first()
+    ratings=Rate.objects.order_by('-rated_at')
+    rates_status=None
+    if rates is None:
+        rate_status=False
+    else:
+        rate_status=True
+
+    if request.method=='POST':
+        form=RateForm(request.POST)
+        if form.is_valid():
+            rate=form.save(commit=False)
+            rate.user=request.user
+            rate.project=project
+            rate.save()
+            project_ratings=Rate.objects.filter(project=project)
+
+            design = form.cleaned_data['design']
+            usability = form.cleaned_data['usability']
+            content = form.cleaned_data['content']
+            rate.design = design
+            rate.usability = usability
+            rate.content = content
+            rate.average = (rate.design + rate.usability + rate.content)/3
+            rate.save()
+
+            design_ratings = [d.design for d in project_ratings]
+            design_average = sum(design_ratings) / len(design_ratings)
+
+            usability_ratings = [us.usability for us in project_ratings]
+            usability_average = sum(usability_ratings) / len(usability_ratings)
+
+            content_ratings = [content.content for content in project_ratings]
+            content_average = sum(content_ratings) / len(content_ratings)
+            score = (design_average + usability_average + content_average) / 3
+
+            rate.design_average = round(design_average, 2)
+            rate.usability_average = round(usability_average, 2)
+            rate.content_average = round(content_average, 2)
+            rate.score = round(score, 2)
+
+            rate.save()
+            return HttpResponseRedirect(request.path_info)    
+    else:
+        form=RateForm()
         
-               
+    params ={
+      'project':project,
+      'rates_status':rates_status,
+      'rating_form':form,
+      'ratings':ratings,
+     }
+    return render(request,'awwards/voteproject.html',params)
 
 
 
