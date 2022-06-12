@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 import os
+import cloudinary
 import django_heroku
 import dj_database_url
 from decouple import config, Csv
@@ -27,6 +28,7 @@ INSTALLED_APPS = [
     'awwardsapp',
     'crispy-forms',
     'bootstrap4',
+    'cloudinary',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -80,6 +82,14 @@ EMAIL_HOST = config('EMAIL_HOST')
 EMAIL_PORT = config('EMAIL_PORT')
 EMAIL_HOST_USER = config('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
+
+# cloudinary configurations
+cloudinary.config( 
+      cloud_name = config('CLOUDINARY_NAME'), 
+      api_key = config('CLOUDINARY_API_KEY'), 
+      api_secret = config('CLOUDINARY_API_SECRET') 
+    )
+# DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
