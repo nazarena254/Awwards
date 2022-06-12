@@ -25,3 +25,22 @@ def signup_view(request):
         else:
             form=SignUpForm()
         return render(request, 'registration/signup', {"form":form})     
+
+def welcome(request):
+    users=User.object.exclude(id=request.user.id)
+    profiles=Profile.objects.all()
+    projects=Project.objects.all()
+    project_average=Rate.objects.order_by('-scores').first()
+    ratings=Rate.objects.all()
+
+    params={
+        'users':users,
+        'profiles':profiles,
+        'projects':projects,
+        'project_average':project_average,
+        'ratings':ratings,
+    }
+    return render(request,'awwards/index.html',params)
+
+
+
