@@ -101,7 +101,6 @@ class Rate(models.Model):
     user=models.ForeignKey(User,on_delete=models.CASCADE,related_name='rate')
     project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name='ratings')
     rated_at=models.DateTimeField(auto_now_add=True)
- 
     
     def save_rating(self):
         self.save()
