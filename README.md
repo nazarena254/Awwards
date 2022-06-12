@@ -1,4 +1,4 @@
-## Awwards
+# Awwards
 
 ## Description
 This is a Django web application where users get to rate projects that have been uploaded based on their design,content and usability.The application also allows users to post their projects and have it reviewed by their peers.
@@ -55,6 +55,7 @@ Nazarena Wambura.</br>
 |----------------------------------------------|:-----------------------------------:|-----------------------------:|       
 | Click on button vote on the project  | Enter rate for design content and usability | The rates are updated and displayed  |
 
+<br/>
 ## Setup/Installation Requirements
 1. Create a folder and cd to it.
 2. Clone the repository below with the command `git clone <https option url> .`  <br>
