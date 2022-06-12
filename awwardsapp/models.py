@@ -37,4 +37,44 @@ class Profile(models.Model):
     def __str__(self):
         return f'{self.user.username} Profile'
 
+class Project(models.Model):
+    title=models.CharField(max_length=50)
+    description=models.TextField()
+    project_image=models.ImageField(upload_to='projects/')
+    project_url=models.URLField()
+    pub_date=models.DateTimeField(auto_now_add=True)
+    user=models.ForeignKey(User,on_delete=models.CASCADE,related_name='project')
+    technologies = models.CharField(max_length=200, blank=True)
+    
 
+    def __str__(self):
+        return self.title
+
+    def save_project(self):
+        self.save()
+
+    def delete_project(self):
+        self.delete()
+
+    @classmethod
+    def search_project(cls,search_term):
+        projects= cls.objects.filter(title__icontains=search_term).all()
+        return projects
+
+    @classmethod
+    def all_projects(cls):
+        return cls.objects.all()
+
+    @classmethod
+    def get_project_by_id(cls,id):
+        project=Project.objects.filter(id=id)
+        return project
+
+    class Meta:
+        '''
+        Class method to display images by date published
+        '''
+        ordering = ["-pk"]
+
+
+    
