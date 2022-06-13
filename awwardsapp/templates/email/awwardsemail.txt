@@ -1,0 +1,5 @@
+Hello {{name}}
+
+Welcome to NazAwwards.rate and review awwards and remember to upload yours for reviews.
+Have fun!!
+If this is not you please contact us immediately

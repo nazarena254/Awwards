@@ -1,0 +1,38 @@
+.uploadForm form {
+    width: 60%;
+    padding: 20px;
+    border-radius: 6px;
+    float: center;
+    align-items: center;
+    font-size: 16px;
+    font-style: bold;
+    margin-left: 20%;
+    margin-right: 10%;
+    margin-top: 5px;
+    margin-bottom: 3%;
+    background-color: rgb(255, 255, 255, 0.3);
+    box-shadow: 0 0 20px 0 grey;
+}
+
+.uploadForm label {
+    font-size: 16px;
+    font-style: italic;
+}
+
+.submission h1 {
+    font-weight: 900;
+}
+
+.submission hr {
+    border: 2px solid black;
+    border-radius: 50%;
+}
+
+.btnUpload {
+    background-color: #49c5b6;
+}
+
+.uploadForm .help-block {
+    color: red;
+    display: flex;
+}

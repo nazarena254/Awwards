@@ -1,0 +1,179 @@
+.icons {
+    font-size: 22px !important;
+}
+
+.icons i {
+    margin-right: 10px;
+}
+
+#header-top {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    border-bottom: 1px solid #E6EAEA;
+    margin-right: 3px;
+    margin-left: 3px;
+    box-shadow: 0 0 20px 0 grey;
+}
+
+.box-left {
+    width: 15%;
+}
+
+.box-center {
+    width: 70%;
+    text-align: center;
+}
+
+.box-right {
+    width: 15%;
+}
+
+#header {
+    position: relative;
+    top: 0;
+    height: 30px;
+    line-height: 73px;
+    font-size: 13px;
+    font-weight: 400;
+    background-color: #f4f7f6;
+    justify-content: flex-end;
+}
+
+header {
+    display: block !important;
+}
+
+#searchform {
+    width: 30%;
+    border-radius: 6px;
+    float: left;
+    align-items: center;
+    font-size: 16px;
+    font-style: bold;
+}
+
+#searchform input {
+    padding-top: 2%;
+    border-left: none !important;
+    border-top: none !important;
+    border-bottom: 2px solid black !important;
+}
+
+.searchForm {
+    display: flex;
+}
+
+.awwards {
+    font-weight: bold !important;
+}
+
+.loginDets {
+    float: right;
+    padding-right: 23px;
+    padding-left: 23px;
+    margin-right: 10%;
+}
+
+.box-center2 {
+    width: 40%;
+    text-align: center;
+}
+
+.box-right2 {
+    float: right;
+}
+
+#header-top a {
+    color: black;
+}
+
+.submitBtn {
+    background-color: #49c5b6
+}
+
+.helptext {
+    display: none;
+}
+
+ul.errorlist {
+    color: red;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-image: url(/static/images/loginwallpaper.jpg);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding-left: 32px;
+    text-decoration: none;
+    color: black;
+    font-weight: 800 !important;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: grey;
+}
+
+.sidenav hr {
+    padding: 0%;
+    margin: 0;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+#main {
+    transition: margin-left .5s;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+    .sidenav a {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width:900px) {
+    #header-top {
+        height: 100px;
+    }
+    .mostRated {
+        margin-top: 15% !important;
+    }
+    .overlay2 {
+        top: 75%;
+    }
+    .visitDetails {
+        margin-top: 40%;
+    }
+    .mostRatedDetails {
+        right: 0 !important;
+        left: -10px;
+        padding: 2% !important;
+    }
+}
