@@ -34,7 +34,6 @@
                 </div>
             </div>
 
-
             <hr class="mt-4">
             <div class="card-columns cardprofileImages">
                 {% for post in projects %}
@@ -57,13 +56,12 @@
                                 {{post.title|title}}</strong></span>
                             <span style="float:right"> <a href="{{post.project_url}}" target="_blank"> <i
                                     class="fa fa-share" style="color:black;font-size:20px;"></i></a></span>
-
                         </div>
                         <p class="text-center"> <strong>Description</strong>:<br>{{post.description}}</p>
                         <p></p>
                         <div>
                             <span><strong>From</strong> :{%if post.user.profile.location%}
-                            {{post.user.profile.location|title}} </span> {%else%} Unefined </span>{%endif%}
+                            {{post.user.profile.location|title}} </span> {%else%} Undefined </span>{%endif%}
                             <span style="float:right;"> <strong>Uploaded On</strong> : {{post.pub_date|date}}</span>
                         </div>
                     </div>
