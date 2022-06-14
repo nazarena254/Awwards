@@ -19,10 +19,14 @@
             <i class="fa fa-facebook" aria-hidden="true"></i>
         </span>
         </div>
-
     </div>
-    {% extends 'awwards/base.html' %}{%load crispy_forms_tags%} {% block content %}{{block.super}}
-    <a href="{% url 'rate' project_title=project_average.project.title%}">
+
+    {% extends 'awwards/base.html' %}
+    {%load crispy_forms_tags%} 
+    {% block content %}
+    {{block.super}}
+
+    <a href="{% url 'awwardsapp:rate' project_title='blog' %}">
         <div class="mostRated" style="margin-top:5%;background-image:url({{project_average.project.project_image.url}});">
             <div class="container mostRatedDetails">
                 <div class="trending">
@@ -54,6 +58,7 @@
                     <span style="float:right;font-size:25px;font-weight:900;">{{project_average.project.ratings.count}} Vote{{ratings.count|pluralize}}</span>
                 </div>
 
+
             </div>
 
         </div>
@@ -73,7 +78,7 @@
                     <img src="{{post.project_image.url}}" class="card-img1" style="width:100%;height:300px;">
                     <div class="overlay">
                         <div class="text">
-                            <a href="{% url 'rate' project_title=post.title %}">
+                            <a href="{% url 'awwardsapp:rate' project_title=post.title %}">
                                 <button class="rgba-white-slight btn" style="font-size: 20px;"> Vote</button>
                             </a>
 
@@ -90,26 +95,27 @@
                     <p class="text-center"> <strong>Description</strong>:<br>{{post.description}}</p>
                     <p></p>
                     <div>
-                        <span><strong>From</strong> :{%if post.user.profile.location%} {{post.user.profile.location|title}} </span> {%else%} Unefined </span>{%endif%}
+                        <span><strong>From</strong> :{%if post.user.profile.location%} {{post.user.profile.location|title}} </span> {%else%} Undefined </span>{%endif%}
                         <span style="float:right;"> <strong>Uploaded On</strong> : {{post.pub_date|date}}</span>
                     </div>
                 </div>
                 <div class="card-footer" style="background-color:transparent;">
                     <div>
-                        <a href="{% url 'user_profile' post.user.username  %}">
+                        <a href="{% url 'awwardsapp:user_profile' post.user.username  %}">
                             <img src="{{post.user.profile.prof_pic.url}}" class="rounded-circle border ml-3 mt-2  mr-3" alt="{{prof_pic.user.user.username}}" width="35" height="35">
                             <span style="color:black;font-weight:bold">By: {{post.user.username|title}}</span>
                         </a>
                         <span style="float:right"><strong>Technologies</strong>: {{post.technologies}}</span>
 
+
                     </div>
                 </div>
 
             </div>
+
             {%endfor%}
 
         </div>
-
 
     </div>
 </div>

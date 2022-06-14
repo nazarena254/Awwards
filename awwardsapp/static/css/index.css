@@ -1,0 +1,252 @@
+html,
+body {
+    scroll-behavior: smooth;
+    font-family: 'Open Sans', sans-serif;
+    background-color: whitesmoke;
+    font-size: 14px;
+}
+
+.login {
+    margin-top: 3%;
+    background-image: url(/static/images/loginwallpaper.jpg);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.loginForm form {
+    margin-top: 5%;
+    width: 100%;
+    padding: 20px;
+    border-radius: 6px;
+    background-color: transparent;
+    box-shadow: 0 0 20px 0 #49c5b6;
+    float: center;
+    margin-bottom: 2%;
+    align-items: center;
+    font-size: 16px;
+    font-style: bold;
+}
+
+.loginForm label {
+    font-style: italic;
+}
+
+.loginForm input {
+    border: 1px solid #bdbdbd !important;
+    border-radius: 5px;
+}
+
+.loginForm input:hover {
+    box-shadow: 0 0 6px 0 #49c5b6;
+}
+
+.loginForm input:focus {
+    box-shadow: 0 0 6px 0 #49c5b6 !important;
+}
+
+.loginForm .btn {
+    background-color: #49c5b6;
+    padding: 20px !important;
+}
+
+.loginForm .help-block {
+    color: red;
+    text-align: center;
+}
+
+.alert li {
+    color: red;
+}
+
+.cardsIndex,
+.searchCards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.projectImage {
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.card-img1,
+.card-img2 {
+    opacity: 1;
+    display: block;
+    transition: .5s ease;
+    backface-visibility: hidden;
+}
+
+.overlay {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.projectImage:hover .card-img1,
+.projectImage:hover .card-img2 {
+    opacity: 0.3;
+    transform: scale(1.03) !important;
+}
+
+.projectImage:hover .overlay {
+    opacity: 1;
+}
+
+th {
+    font-size: 17px !important;
+    font-weight: 900 !important;
+    font-style: italic;
+    border-bottom: 2px solid black;
+}
+
+tr {
+    border-bottom: 2px solid black;
+}
+
+.table {
+    background-image: url(/static/images/loginwallpaper.jpg);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+table {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 5px;
+}
+
+#design {
+    color: white;
+    border: 3px solid #00C851!important;
+    border-radius: 50%;
+    height: 100px;
+    width: 150px;
+    padding: 20px;
+    margin-right: 10px;
+    margin-left: 30px;
+}
+
+#usable {
+    color: white;
+    border: 3px solid #4285F4!important;
+    border-radius: 50%;
+    padding: 20px;
+    height: 100px;
+    width: 150px;
+    margin-right: 10px;
+}
+
+#contente {
+    color: white;
+    border: 3px solid orange;
+    border-radius: 50%;
+    height: 100px;
+    width: 150px;
+    padding: 20px;
+    margin-right: 20px;
+}
+
+#averagemax {
+    color: white;
+    border: 3px solid #33b5e5;
+    border-radius: 50%;
+    height: 100px;
+    width: 150px;
+    padding: 20px;
+    margin-right: 20px;
+}
+
+.rates {
+    font-size: 12px;
+    font-weight: bolder;
+    text-align: center;
+}
+
+.rateForm form {
+    margin-top: 5%;
+    width: 100%;
+    padding: 20px;
+    border-radius: 6px;
+    background-color: transparent;
+    box-shadow: 0 0 20px 0 #49c5b6;
+    float: center;
+    margin-bottom: 2%;
+    align-items: center;
+    font-size: 16px;
+    font-style: bold;
+}
+
+.rateForm label {
+    margin-left: 10%;
+}
+
+.rateForm select {
+    border: 2px;
+    background-color: transparent;
+    margin-left: 5px;
+}
+
+.rateForm .btn {
+    margin-left: 10%;
+}
+
+.mostRated {
+    background-color: black;
+    color: white;
+    font-weight: 900;
+    height: 70vh;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.mostRated a {
+    color: white;
+}
+
+.mostRatedDetails {
+    background-color: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    right: 0 !important;
+    width: 100%;
+    left: 20px;
+    padding-bottom: 1% !important;
+    border-radius: 20px;
+}
+
+.overlay2 {
+    transition: .5s ease;
+    opacity: 1;
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.visitDetails {
+    margin-top: 20%;
+}
+
+.visitDetails .btn {
+    background-color: #49c5b6;
+    padding: 10px !important;
+    border-radius: 4px;
+    width: 20%;
+}

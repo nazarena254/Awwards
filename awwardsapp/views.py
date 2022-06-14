@@ -3,8 +3,9 @@ from django.contrib.auth import login, authenticate
 from django.contrib.auth.decorators import login_required
 from .forms import *
 from .models import *
-from .email import send_welcome_email
 from django.http import HttpResponseRedirect
+from .email import send_welcome_email
+
 
 # Create your views here.
 def signup_view(request):
@@ -37,7 +38,8 @@ def welcome(request):
    projects=Project.objects.all()
    project_average=Rate.objects.order_by('-score').first()
    ratings=Rate.objects.all()
-             
+   
+          
    params={
        'users':users,
        'profiles':profiles,

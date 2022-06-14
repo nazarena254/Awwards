@@ -11,9 +11,9 @@
                 <div class="card " style="margin-top:6%; padding:20px ">
                     <div class="card-body ">
                         <h5 class="card-title "><a>Create Account</a> <span style="float:right ">Already a member?
-                                <a href="{% url 'login' %} " class="text-info ">Login now</a></span></h5>
+                                <a href="{% url 'awwardsapp:login' %} " class="text-info ">Login now</a></span></h5>
                         <div class="card-text loginForm ">
-                            <form action="{% url 'signup' %} " method="post" validate>
+                            <form action="{% url 'awwardsapp:signup' %} " method="post" validate>
                                 {% csrf_token%} {{ form}}
                                 <div class="text-center ">
                                     <button type="submit " class="btn ">SignUp</button>

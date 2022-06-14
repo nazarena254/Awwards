@@ -1,5 +1,6 @@
 {%load static%}
 
+
 <header id="header">
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -11,18 +12,19 @@
     </div>
     <div id="header-top">
 
+
         <div class="box-left item">
             <span classpan style="cursor:pointer;font-size:20px;font-weight:bold;" onclick="openNav()">&#9776; Menu</span>
         </div>
         <div class="box-center2">
-            <form class="mb-0" id="searchform" action="{% url 'search_results' %}" role="search">
+            <form class="mb-0" id="searchform" action="{% url 'awwardsapp:search_results' %}" role="search" >
 
                 <div class="input-group">
 
-                    <input class="form-control border-right-0  border text-center" type="search" placeholder="search" id="searching" name="search_project">
+                    <input class="form-control border-right-0  border text-center" type="search" placeholder="search...blog,pizza shop, color picker" id="searching" name="search_project">
                     <button class=" bg-transparent btn-sm mt-2 border-left-0 border-top-0" type="submit">
-                            <i class="fa fa-search" style="font-size:20px"></i>
-                        </button>
+                            <i class="fa fa-search btn-outline-primary" style="font-size:20px"></i>
+                    </button>
 
                 </div>
             </form>
@@ -34,15 +36,15 @@
         {% if user.is_authenticated %}
         <div>
             </a>
-            <a href=" {%url 'profile' user.username %}">
+            <a href=" {%url 'awwardsapp:profile' user.username %}">
                 <img src="{{user.profile.prof_pic.url}}" style="width:50px;height:50px;" alt="none" class="rounded-circle border">
                 <span class="text-muted" style="font-weight:bold;font-size: 20px;">{{user.username}}</span>
-           </a>
+            </a>
 
         </div>
         {%else%}
         <a href="{%url 'login' %}" class="f-12 font-weight-bold mr-3 ml-auto nav-link text-white-50">REGISTER/LOGIN</a>{%endif%}
-        <a href="{% url 'add_project' %}" class="f-12 font-weight-bold px-4 h-100 btn d-flex align-items-center text-light submitBtn">SUBMIT YOUR SITE!</a>
+        <a href="{% url 'awwardsapp:add_project' %}" class="f-12 font-weight-bold px-4 h-100 btn d-flex align-items-center text-light submitBtn">SUBMIT YOUR SITE!</a>
 
     </div>
 

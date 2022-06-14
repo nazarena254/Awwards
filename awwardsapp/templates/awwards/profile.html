@@ -61,7 +61,7 @@
                         </button>
                         </div>
                         <div class="modal-body updateForm">
-                            <form action="{% url 'profile' user.username %}" method="post" novalidate enctype="multipart/form-data" class="mr-4 mt-4 ml-4 mb-4">
+                            <form action="{% url 'awwardsapp:profile' user.username %}" method="post" novalidate enctype="multipart/form-data" class="mr-4 mt-4 ml-4 mb-4">
                                 {% csrf_token%} {{ user_form}} {{ profile_form}}
                                 <button type="submit" class="btn btn-primary btn-sm"> Update Profile</button>
                             </form>
@@ -79,7 +79,7 @@
                     <img src="{{post.project_image.url}}" class="card-img1" style="width:100%;height:300px;">
                     <div class="overlay">
                         <div class="text">
-                            <a href="{% url 'rate' project_title=post.title %}">
+                            <a href="{% url 'awwardsapp:rate' project_title=post.title %}">
                                 <button class="rgba-white-slight btn" style="font-size: 20px;"> Vote</button>
                             </a>
                         </div>

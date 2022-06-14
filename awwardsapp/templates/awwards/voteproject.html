@@ -1,0 +1,159 @@
+<div id="main">
+
+    {% extends 'awwards/base.html' %} 
+    {% load crispy_forms_tags %} 
+    
+    {% block content %}
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-7">
+            <div class="container" style="margin-top:8%">
+
+                <div class="card">
+
+                    <div class="card-img projectImage">
+                        <img class="card-img2" width="100%" height="400px" src="{{ project.project_image.url }}" alt="{{project.title}}">
+                        <div class="overlay">
+                            {% for rates in project.ratings.all %} {% if forloop.counter is project.ratings.all.count %}
+                            <div id="design">{{ rates.design_average}}<br>
+                                <span class="rates">design_average</span>
+                            </div>
+                            <div id="usable" class="mx-auto">{{ rates.usability_average }}<br>
+                                <span class="rates">usability_average</span>
+                            </div>
+                            <div id="contente">{{ rates.content_average }}<br>
+                                <span class="rates">content_average</span>
+                            </div>
+                            <div id="averagemax">{{ rates.score }}<br>
+                                <span class="rates">Average</span>
+                            </div>
+                            {% endif %} {% endfor %}
+
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div>
+                            <span style="font: size 20px;font-weight:800;"><strong>Title: {{project.title|title}}</strong></span>
+                            <span style="float:right"> <a href="{{project.project_url}}" target="_blank"> <i class="fa fa-share"
+                            style="color:black;font-size:20px;"></i></a></span>
+
+                        </div>
+                        <p class="text-center"> <strong>Description</strong>:<br>{{project.description}}</p>
+                        <p></p>
+                        <div>
+                            <span><strong>From</strong> :{%if project.user.profile.location%}
+                    {{project.user.profile.location|title}} </span> {%else%} Unefined </span>{%endif%}
+                            <span style="float:right;"> <strong>Uploaded On</strong> : {{project.pub_date|date}}</span>
+                        </div>
+                        <div class="card-footer" style="background-color:transparent;">
+                            <div>
+                                <a href="{% url 'awwardsapp:user_profile' project.user.username  %}">
+                                    <img src="{{project.user.profile.prof_pic.url}}" class="rounded-circle border ml-3 mt-2  mr-3" alt="{{prof_pic.user.user.username}}" width="35" height="35">
+                                    <span style="color:black;font-weight:bold">By: {{project.user.username|title}}</span>
+                                </a>
+                                <span style="float:right"><strong>Technologies</strong>: {{project.technologies}}</span>
+
+
+                            </div>
+                        </div>
+
+                        <hr>
+                        <div>
+                            <h3 class="text-center">Ratings Scores</h3>
+                            <div class="text-center">
+                                {% for rates in project.ratings.all %} {% if forloop.counter is project.ratings.all.count %}
+
+                                <a class="btn btn-outline-success btn-sm">
+                                    <h5>{{ rates.design_average }}</h5>
+                                    <span class="sc">Design Average</span>
+                                </a>
+                                <a class="btn btn-outline-primary btn-sm" id="u">
+                                    <h5>{{ rates.usability_average }}</h5>
+                                    <span class="sc">Usability Average</span>
+                                </a>
+                                <a class="btn btn-outline-orange btn-sm" id="c">
+                                    <h5>{{ rates.content_average }}</h5>
+                                    <span class="sc">Content Average</span>
+                                </a>
+                                <a class="btn btn-info btn-sm">
+                                    <h5>{{ rates.score }}</h5>
+                                    <span class="sc">Average Score</span>
+                                </a>
+                                {% endif %} {% endfor %}
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <br> {% if rates_status %}
+                <div class="submission text-center">
+                    <h3>You have already voted</h3>
+                    <hr>
+                </div>
+                {% else %} {% if user.is_authenticated %}
+                <div class="rateForm">
+                    <form action="" method="post" enctype="multipart/form-data">
+                        {% csrf_token %} {{rating_form}}
+                        <button class="btn btn-sm btn-info">Rate</button>
+                    </form>
+                </div>
+
+                {% endif %} {% endif %}
+                <div class="table">
+                    <table style="width: 100%">
+                        <tr>
+                            <th>User Voters</th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th>Design</th>
+                            <th>Usability</th>
+                            <th>Content</th>
+                            <th>Average</th>
+                        </tr>
+                        {% for review in ratings %} {% if project.id == review.project.id %}
+                        <tr>
+                            <td>
+                                <a href="{% url 'awwardsapp:user_profile' review.user.username  %}">
+                                    <div class="col-md-2"> <img src="{{review.user.profile.prof_pic.url}}" style="height:50px;width:50px;border-radius:50%"> </div>
+                                </a>
+
+                            </td>
+                            <td>
+                                <p style="font-size:14px;"><span style="font-weight:bold;"> {{review.user.username}}</span> from
+                                    <span style="font-weight:bold;">{%if review.user.profile.location%}
+                            {{review.user.profile.location}}{%else%} Undefined {%endif%}</span> <br> <a href="{{review.user.profile.account_url}}">{{review.user.profile.account_url}}</a></p>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td>
+
+                                <h5>{{review.design}}</h5>
+                            </td>
+                            <td>
+                                <h5>{{review.usability}}</h5>
+
+                            </td>
+                            <td>
+                                <h5>{{review.content}}</h5>
+
+                            </td>
+                            <td>
+                                <h5>{{review.average}}</h5>
+
+                            </td>
+                        </tr>
+                        {%endif%} 
+                        {%endfor%}
+
+                    </table>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+
+</div>
+
+{% endblock %}

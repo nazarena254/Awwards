@@ -12,9 +12,9 @@
                 <div class="card " style="margin-top:6%; padding:20px ">
                     <div class="card-body ">
                         <h5 class="card-title "><a>Sign in to continue</a> <span style="float:right ">Not a member yet? <a
-                                href="{% url 'signup' %} " class="text-info ">Register now</a></span></h5>
+                                href="{% url 'awwardsapp:signup' %} " class="text-info ">Register now</a></span></h5>
                         <div class="card-text loginForm ">
-                            <form action="{% url 'login' %} " method="post" validate>
+                            <form action="{% url 'awwardsapp:login' %} " method="post" validate>
                                 {% csrf_token%} {{ form|crispy}}
                                 <div class="text-center ">
                                     <button type="submit" class="btn">Login</button>

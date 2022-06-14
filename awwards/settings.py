@@ -26,15 +26,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Application definition
 INSTALLED_APPS = [
     'awwardsapp',
-    'crispy-forms',
-    'bootstrap4',
-    'cloudinary',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'crispy_forms',
+    'bootstrap4',
+    'cloudinary',
 ]
 
 MIDDLEWARE = [
