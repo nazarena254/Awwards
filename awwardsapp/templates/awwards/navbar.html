@@ -29,7 +29,7 @@
                 </div>
             </form>
             <a href="/">
-                <h1 class="slogan awwards">awwards.</h1>
+                <h1 class="slogan awwards">awwards</h1>
             </a>
 
         </div>
@@ -43,8 +43,8 @@
 
         </div>
         {%else%}
-        <a href="{%url 'login' %}" class="f-12 font-weight-bold mr-3 ml-auto nav-link text-white-50">REGISTER/LOGIN</a>{%endif%}
-        <a href="{% url 'awwardsapp:add_project' %}" class="f-12 font-weight-bold px-4 h-100 btn d-flex align-items-center text-light submitBtn">SUBMIT YOUR SITE!</a>
+        <a href="{%url 'awwardsapp:login' %}" class="f-12 font-weight-bold mr-3 ml-auto nav-link text-white-50">REGISTER/LOGIN</a>{%endif%}
+        <a href="{% url 'awwardsapp:add_project' %}" class="f-12 font-weight-bold px-4 h-100 btn d-flex align-items-center text-light submitBtn">SUBMIT YOUR PROJECT!</a>
 
     </div>
 
