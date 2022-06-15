@@ -75,6 +75,7 @@ DEBUG=config("DEBUG", default=False, cast=bool)
 MODE=config("MODE", default="dev")
 ALLOWED_HOSTS='nazawwards.herokuapp.com'
 
+
 # Email configurations remember to install python-decouple
 # We use the config function to connect to the environment variables
 EMAIL_USE_TLS = config('EMAIL_USE_TLS')
