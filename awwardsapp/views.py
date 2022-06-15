@@ -25,11 +25,10 @@ def signup_view(request):
 
             login(request, user)
 
-
             return redirect('welcome')
    else:
         form = SignUpForm()
-   return render(request, 'registration/signup.html', {'form': form})
+   return render(request, 'registration/signup.html',{'form':form})
     
 
 def welcome(request):
