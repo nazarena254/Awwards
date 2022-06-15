@@ -7,12 +7,17 @@ This is a Django web application where users get to rate projects that have been
 Nazarena Wambura.</br>
 [Github Account](https://github.com/nazarena254)
 
-<!-- ### Homepage
-![nazinstagram](./insta/static/images/myhomepg.png)
+### Homepage
+![nazawwards](./awwardsapp/static/images/awwards.png)
 ### Admin panel
-![nazinstagram](./insta/static/images/myadmin.png)
-### Wireframe sample
-![nazinstagram](wireframe.png) -->
+![nazawwards](./awwardsapp/static/images/adminawwards.png)
+### Signup/Login
+![nazawwards](./awwardsapp/static/images/loginawwards.png)
+### Project samples
+![nazawwards](./awwardsapp/static/images/nominess.png)
+### Voting
+![nazawwards](./awwardsapp/static/images/voting.png)
+
 
 ## User Story
 1. View posted projects and their details.
@@ -71,7 +76,7 @@ Nazarena Wambura.</br>
    python3 manage.py migrate 
        
 ## Running the Application
-1. Run main aplication<br>    
+1. Run main aplication locally on http://127.0.0.1:8000/ local host<br>    
    * python3.9 manage.py runserver<br>
     Note: python version will vary in future
 
